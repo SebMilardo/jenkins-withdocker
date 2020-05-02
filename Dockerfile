@@ -7,7 +7,7 @@ WORKDIR /usr/share
 
 RUN git clone https://github.com/jenkinsci/blueocean-plugin blueocean  
 
-COPY /usr/share/blueocean/blueocean/target/plugins /usr/share/jenkins/ref/plugins/
+COPY ./blueocean/blueocean/target/plugins /usr/share/jenkins/ref/plugins/
 
 RUN apk add docker && addgroup jenkins docker
 RUN for f in /usr/share/jenkins/ref/plugins/*.hpi; do mv "$f" "${f%%hpi}jpi"; done
