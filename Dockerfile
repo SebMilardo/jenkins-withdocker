@@ -3,7 +3,9 @@ MAINTAINER milardo@mit.edu
 
 USER root
 
-COPY blueocean/target/plugins /usr/share/jenkins/ref/plugins/
+RUN git clone http://github.com/jenkinsci/blueocean-plugin blueocean 
+
+COPY blueocean/blueocean/target/plugins /usr/share/jenkins/ref/plugins/
 
 RUN apk add docker && addgroup jenkins docker
 RUN for f in /usr/share/jenkins/ref/plugins/*.hpi; do mv "$f" "${f%%hpi}jpi"; done
