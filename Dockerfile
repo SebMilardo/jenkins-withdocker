@@ -7,6 +7,8 @@ WORKDIR /usr/share
 
 RUN git clone https://github.com/jenkinsci/blueocean-plugin blueocean  
 
+RUN ls -a
+
 COPY ./blueocean/blueocean/target/plugins /usr/share/jenkins/ref/plugins/
 
 RUN apk add docker && addgroup jenkins docker
