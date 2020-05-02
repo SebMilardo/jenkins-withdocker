@@ -3,7 +3,9 @@ MAINTAINER milardo@mit.edu
 
 USER root
 
-RUN git clone http://github.com/jenkinsci/blueocean-plugin /usr/share/blueocean 
+WORKDIR /usr/share
+
+RUN git clone https://github.com/jenkinsci/blueocean-plugin blueocean  
 
 COPY /usr/share/blueocean/blueocean/target/plugins /usr/share/jenkins/ref/plugins/
 
