@@ -7,7 +7,7 @@ WORKDIR /usr/share
 
 RUN git clone https://github.com/jenkinsci/blueocean-plugin blueocean  
 
-RUN ls -a
+RUN pwd
 
 COPY ./blueocean/blueocean/target/plugins /usr/share/jenkins/ref/plugins/
 
